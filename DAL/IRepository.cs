@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BE;
+using MongoDB.Driver;
 
 namespace DAL
 {
     public interface IRepository<TEntity> where TEntity : IEntity
     {
-        TEntity GetById(int id);
+        TEntity GetById(string id);
         void Save(TEntity entity);
         void Delete(TEntity entity);
         void Update(TEntity entity);
