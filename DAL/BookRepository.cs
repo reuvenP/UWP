@@ -10,16 +10,20 @@ using MongoDB.Driver.GridFS;
 
 namespace DAL
 {
-    public class BookRepository : IRepository<Book>
+    public sealed class BookRepository : IRepository<Book>
     {
-        protected static IMongoClient _client;
-        protected static IMongoDatabase _database;
-
-        public BookRepository()
+        //
+        private static readonly BookRepository instance = new BookRepository();
+        static BookRepository() { }
+        private BookRepository()
         {
             _client = new MongoClient();
             _database = _client.GetDatabase("Mivchar_project");
         }
+        public static BookRepository Insatnce { get { return instance; } }
+        //
+        private static IMongoClient _client;
+        private static IMongoDatabase _database;
 
         public void Delete(Book entity)
         {
@@ -42,7 +46,6 @@ namespace DAL
                         where condition(b)
                         select b;
             return query.ToList();
-            
         }
 
         public Book GetById(string id)
