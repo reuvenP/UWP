@@ -41,11 +41,8 @@ namespace DAL
 
         public IEnumerable<Book> GetAllByCondition(Predicate<Book> condition)
         {
-            var collection = _database.GetCollection<Book>("Books");
-            var query = from b in collection.AsQueryable<Book>()
-                        where condition(b)
-                        select b;
-            return query.ToList();
+            var allBooks = this.GetAll();
+            return allBooks.Where(x => condition(x));
         }
 
         public Book GetById(string id)

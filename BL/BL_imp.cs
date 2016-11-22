@@ -26,7 +26,7 @@ namespace BL
 
         public List<Book> GetBooksByAuthor(string author)
         {
-            return bookRepo.GetAllByCondition(x => x.Author.Contains("a")).ToList();
+            return bookRepo.GetAllByCondition(x => x.Author.Contains(author)).ToList();
         }
 
         public List<Book> GetBooksByTitle(string title)
