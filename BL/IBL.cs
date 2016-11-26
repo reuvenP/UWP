@@ -12,6 +12,7 @@ namespace BL
     {
         List<Book> GetBooksByTitle(string title);
         List<Book> GetBooksByAuthor(string author);
+        IEnumerable<Book> GetAllBooks();
         Book GetBookById(string id);
         void SubmitOrder(List<Book> shoppingCart, string name, string email, string phone, string shipAddress);
     }

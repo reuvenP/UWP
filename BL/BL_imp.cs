@@ -18,6 +18,12 @@ namespace BL
             bookRepo = BookRepository.Insatnce;
         }
         public static BL_imp Insatnce { get { return instance; } }
+
+        public IEnumerable<Book> GetAllBooks()
+        {
+            return bookRepo.GetAll();
+        }
+
         //
         public Book GetBookById(string id)
         {
