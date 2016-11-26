@@ -15,6 +15,7 @@ C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\bin\Debug\MongoDB.Driver.xml
 C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\bin\Debug\MongoDB.Driver.Core.xml
 C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\PL.csprojResolveAssemblyReference.cache
 C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\MainWindow.g.cs
+C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\Views\BookDetailsView.g.cs
 C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\Views\MainView.g.cs
 C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\App.g.cs
 C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\GeneratedInternalTypeHelper.g.cs
@@ -22,11 +23,10 @@ C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\PL_MarkupCompile.cach
 C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\PL_MarkupCompile.lref
 C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\App.baml
 C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\MainWindow.baml
+C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\Views\BookDetailsView.baml
 C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\Views\MainView.baml
 C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\PL.g.resources
 C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\PL.Properties.Resources.resources
 C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\PL.csproj.GenerateResource.Cache
 C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\PL.exe
 C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\PL.pdb
-C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\Views\BookDetailsView.g.cs
-C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\Views\BookDetailsView.baml

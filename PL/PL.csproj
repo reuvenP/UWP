@@ -66,6 +66,7 @@
     <Compile Include="Views\BookDetailsView.xaml.cs">
       <DependentUpon>BookDetailsView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ByteArrayToImageConverter.cs" />
     <Compile Include="Views\MainView.xaml.cs">
       <DependentUpon>MainView.xaml</DependentUpon>
     </Compile>

@@ -91,6 +91,21 @@ namespace PL.ViewModels
             {
                 _selectedBook = value;
                 OnPropertyChanged("SelectedBook");
+                if (_selectedBook == null)
+                    IsSelectedBook = false;
+                else
+                    IsSelectedBook = true;
+            }
+        }
+
+        private bool _isSelectedBook;
+        public bool IsSelectedBook
+        {
+            get { return _isSelectedBook; }
+            set
+            {
+                _isSelectedBook = value;
+                OnPropertyChanged("IsSelectedBook");
             }
         }
 

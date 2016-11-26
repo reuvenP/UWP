@@ -6,14 +6,28 @@
              xmlns:local="clr-namespace:PL.Views"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <local:ByteArrayToImageConverter x:Key="imageConverter"/>
+    </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="29*"/>
             <RowDefinition Height="251*"/>
             <RowDefinition Height="40*"/>
         </Grid.RowDefinitions>
-        <DataGrid ItemsSource="{Binding Books, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectedItem="{Binding SelectedBook, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.Row="1"/>
+        <DataGrid IsReadOnly="True" ItemsSource="{Binding Books, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectedItem="{Binding SelectedBook, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.Row="1" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Title" Binding="{Binding Title}" IsReadOnly="True"/>
+                <DataGridTemplateColumn Header="Image" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Image Source="{Binding Image, Converter={StaticResource imageConverter}}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
         <TextBox Text="{Binding SearchLine, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Height="25" Width="100" Grid.Row="0"/>
-        <Button Grid.Row="2" Height="25" Width="100" Content="Next" Command="{Binding DataContext.Nav1To2, RelativeSource={RelativeSource AncestorType={x:Type Window}}, Mode=OneWay}"/>
+        <Button Grid.Row="2" Height="25" Width="100" Content="Next" IsEnabled="{Binding IsSelectedBook, UpdateSourceTrigger=PropertyChanged}" Command="{Binding DataContext.Nav1To2, RelativeSource={RelativeSource AncestorType={x:Type Window}}, Mode=OneWay}"/>
     </Grid>
 </UserControl>
