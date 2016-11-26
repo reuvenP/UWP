@@ -9,5 +9,8 @@
         <DataTemplate DataType="{x:Type vm:MainViewViewModel}">
             <v:MainView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:BookDetailsViewModel}">
+            <v:BookDetailsView/>
+        </DataTemplate>
     </Application.Resources>
 </Application>

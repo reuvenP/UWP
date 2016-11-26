@@ -28,3 +28,5 @@ C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\PL.Properties.Resourc
 C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\PL.csproj.GenerateResource.Cache
 C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\PL.exe
 C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\PL.pdb
+C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\Views\BookDetailsView.g.cs
+C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\Views\BookDetailsView.baml

@@ -9,10 +9,11 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="29*"/>
-            <RowDefinition Height="40*"/>
             <RowDefinition Height="251*"/>
+            <RowDefinition Height="40*"/>
         </Grid.RowDefinitions>
-        <DataGrid ItemsSource="{Binding Books, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectedItem="{Binding SelectedBook, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.Row="2"/>
+        <DataGrid ItemsSource="{Binding Books, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectedItem="{Binding SelectedBook, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.Row="1"/>
         <TextBox Text="{Binding SearchLine, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Height="25" Width="100" Grid.Row="0"/>
+        <Button Grid.Row="2" Height="25" Width="100" Content="Next" Command="{Binding DataContext.Nav1To2, RelativeSource={RelativeSource AncestorType={x:Type Window}}, Mode=OneWay}"/>
     </Grid>
 </UserControl>
