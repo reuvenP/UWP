@@ -42,5 +42,17 @@
                 </DockPanel>
             </Grid>
         </GroupBox>
+        <GroupBox Header="Navigation" Margin="5,0,5,5" Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Content="Back" Grid.Column="0" Height="25" Width="100" Command="{Binding DataContext.Nav2Back, RelativeSource={RelativeSource AncestorType={x:Type Window}}, Mode=OneWay}"/>
+                <Button Content="Add To Cart" Grid.Column="1" Height="25" Width="100" Command="{Binding DataContext.AddToCartCMD, RelativeSource={RelativeSource AncestorType={x:Type Window}}, Mode=OneWay}"/>
+                <Button Content="Go To Cart" Grid.Column="2" Height="25" Width="100"/>
+            </Grid>
+        </GroupBox>
     </Grid>
 </UserControl>
