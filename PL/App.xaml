@@ -15,5 +15,8 @@
         <DataTemplate DataType="{x:Type vm:CartViewModel}">
             <v:CartView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:SubmitViewModel}">
+            <v:SubmitView/>
+        </DataTemplate>
     </Application.Resources>
 </Application>

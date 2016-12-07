@@ -32,6 +32,38 @@ namespace PL.ViewModels
             Nav2Back = new DelegateCommand(BookDetailsBack);
             Cart = new ObservableCollection<Book>();
             AddToCartCMD = new DelegateCommand(AddToCart);
+            GoToCartCMD = new DelegateCommand(GoToCart);
+            Nav3To4 = new DelegateCommand(Nav3To4Func);
+            Nav4Back = new DelegateCommand(Nav4BackFunc);
+        }
+
+        private DelegateCommand _nav3To4;
+        public DelegateCommand Nav3To4
+        {
+            get
+            {
+                return _nav3To4;
+            }
+
+            set
+            {
+                _nav3To4 = value;
+                OnPropertyChanged("Nav3To4");
+            }
+        }
+        private DelegateCommand _nav4Back;
+        public DelegateCommand Nav4Back
+        {
+            get
+            {
+                return _nav4Back;
+            }
+
+            set
+            {
+                _nav4Back = value;
+                OnPropertyChanged("Nav4Back");
+            }
         }
 
         private DelegateCommand _addToCartCMD;
@@ -75,6 +107,21 @@ namespace PL.ViewModels
             }
         }
 
+        private DelegateCommand _goToCartCMD;
+        public DelegateCommand GoToCartCMD
+        {
+            get
+            {
+                return _goToCartCMD;
+            }
+
+            set
+            {
+                _goToCartCMD = value;
+                OnPropertyChanged("GoToCartCMD");
+            }
+        }
+
         public void MainViewToBookDetails(object obj)
         {
             if (_currentScreen != 1)
@@ -91,7 +138,7 @@ namespace PL.ViewModels
 
         public void BookDetailsBack(object obj)
         {
-            if (_currentScreen != 2)
+            if (_currentScreen == 1)
                 return;
             ViewModel = new MainViewViewModel(bl_adapter);
             _currentScreen = 1;
@@ -120,6 +167,44 @@ namespace PL.ViewModels
             var book = bookDetailsView.SelectedBook;
             Cart.Add(book);
             MessageBox.Show("Book " + book.Title + " Was Added!");
+        }
+
+        public void GoToCart(object obj)
+        {
+            if (_currentScreen != 2)
+                return;
+            ViewModel = new CartViewModel(Cart);
+            _currentScreen = 3;
+        }
+
+        public void Nav3To4Func(object obj)
+        {
+            if (_currentScreen != 3)
+                return;
+            var cartScreen = ViewModel as CartViewModel;
+            if (cartScreen.Cart.Count == 0)
+            {
+                MessageBox.Show("Cart is Empty!");
+                return;
+            }
+            ViewModel = new SubmitViewModel(Cart, this);
+            _currentScreen = 4;
+        }
+
+        public void Nav4BackFunc(object obj)
+        {
+            if (_currentScreen != 4)
+                return;
+            ViewModel = new CartViewModel(Cart);
+            _currentScreen = 3;
+        }
+
+        public void PostSubmit(object obj)
+        {
+            if (_currentScreen != 4)
+                return;
+            ViewModel = new MainViewViewModel(bl_adapter);
+            _currentScreen = 1;
         }
     }
 }

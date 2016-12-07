@@ -32,3 +32,5 @@ C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\PL.exe
 C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\PL.pdb
 C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\Views\CartView.g.cs
 C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\Views\CartView.baml
+C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\Views\SubmitView.g.cs
+C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\obj\Debug\Views\SubmitView.baml

@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Code\WPF_project\Mivchar_Reuven_P_Shmuel_K\PL\App.xaml
-4265380469
+5412193399
 
-15260193831
+171720282716
 16-120593160
-MainWindow.xaml;Views\BookDetailsView.xaml;Views\CartView.xaml;Views\MainView.xaml;
+MainWindow.xaml;Views\BookDetailsView.xaml;Views\CartView.xaml;Views\MainView.xaml;Views\SubmitView.xaml;
 
 False
 
