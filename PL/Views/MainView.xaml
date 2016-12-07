@@ -17,7 +17,30 @@
         </Grid.RowDefinitions>
         <DataGrid IsReadOnly="True" ItemsSource="{Binding Books, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" SelectedItem="{Binding SelectedBook, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Grid.Row="1" AutoGenerateColumns="False">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Title" Binding="{Binding Title}" IsReadOnly="True"/>
+                <DataGridTemplateColumn Header="Details" IsReadOnly="True">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <DockPanel>
+                                    <TextBlock Text="Title: "/>
+                                    <TextBlock Text="{Binding Title, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                                </DockPanel>
+                                <DockPanel>
+                                    <TextBlock Text="Author: "/>
+                                    <TextBlock Text="{Binding Author, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                                </DockPanel>
+                                <DockPanel>
+                                    <TextBlock Text="Pages: "/>
+                                    <TextBlock Text="{Binding Pages, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                                </DockPanel>
+                                <DockPanel>
+                                    <TextBlock Text="Year Publication: "/>
+                                    <TextBlock Text="{Binding YearPublication, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+                                </DockPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
                 <DataGridTemplateColumn Header="Image" IsReadOnly="True">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -27,7 +50,11 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <TextBox Text="{Binding SearchLine, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Height="25" Width="100" Grid.Row="0"/>
+        <StackPanel Grid.Row="0" VerticalAlignment="Stretch">
+            <TextBox Text="{Binding SearchLine, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Height="25" Width="100" Grid.Row="0" VerticalAlignment="Bottom"/>
+            <RadioButton IsChecked="{Binding IsFilterByTitle, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+            <RadioButton IsChecked="{Binding IsFilterByAuthor, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
+        </StackPanel>
         <Button Grid.Row="2" Height="25" Width="100" Content="Next" IsEnabled="{Binding IsSelectedBook, UpdateSourceTrigger=PropertyChanged}" Command="{Binding DataContext.Nav1To2, RelativeSource={RelativeSource AncestorType={x:Type Window}}, Mode=OneWay}"/>
     </Grid>
 </UserControl>
