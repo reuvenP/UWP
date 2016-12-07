@@ -8,11 +8,26 @@ using BE;
 using System.Windows;
 using System.IO;
 using System.Xml.Linq;
+using System.Net.Mail;
 
 namespace PL.ViewModels
 {
     public class SubmitViewModel : BaseViewModel
     {
+        public bool IsValidEmail(string emailaddress)
+        {
+            try
+            {
+                MailAddress m = new MailAddress(emailaddress);
+
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+        }
+
         public ObservableCollection<Book> Cart { get; set; }
 
         public string Name
@@ -107,6 +122,13 @@ namespace PL.ViewModels
                 MessageBox.Show("Fill all the fields", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
             }
+
+            if (!IsValidEmail(Mail))
+            {
+                MessageBox.Show("Mail address is invalid", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+                return;
+            }
+
             XElement orders = new XElement("orders");
             if (!File.Exists(@"orders.xml"))
                 orders.Save(@"orders.xml");
