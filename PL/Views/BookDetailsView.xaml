@@ -6,9 +6,41 @@
              xmlns:local="clr-namespace:PL.Views"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <local:ByteArrayToImageConverter x:Key="imageConverter"/>
+    </UserControl.Resources>
     <Grid>
-        <!-- remove it. temp only!!!!!!!!!!!!!!!!!! -->
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="119,72,0,0" TextWrapping="Wrap" Text="{Binding SelectedBook.Title}" VerticalAlignment="Top"/>
-
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Book Details" Margin="5" Grid.Row="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Image Grid.Row="0" Source="{Binding SelectedBook.Image, Converter={StaticResource imageConverter}}" />
+                <DockPanel Grid.Row="1" HorizontalAlignment="Center">
+                    <TextBlock Text="Title: " VerticalAlignment="Center"/>
+                    <TextBlock Text="{Binding SelectedBook.Title, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+                </DockPanel>
+                <DockPanel Grid.Row="2" HorizontalAlignment="Center">
+                    <TextBlock Text="Author: " VerticalAlignment="Center"/>
+                    <TextBlock Text="{Binding SelectedBook.Author, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+                </DockPanel>
+                <DockPanel Grid.Row="3" HorizontalAlignment="Center">
+                    <TextBlock Text="Pages: " VerticalAlignment="Center"/>
+                    <TextBlock Text="{Binding SelectedBook.Pages, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+                </DockPanel>
+                <DockPanel Grid.Row="4" HorizontalAlignment="Center">
+                    <TextBlock Text="Year Publication: " VerticalAlignment="Center"/>
+                    <TextBlock Text="{Binding SelectedBook.YearPublication, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Center"/>
+                </DockPanel>
+            </Grid>
+        </GroupBox>
     </Grid>
 </UserControl>

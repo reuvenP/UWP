@@ -50,6 +50,7 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <GroupBox Header="Search" Margin="5">
         <DockPanel Grid.Row="0" VerticalAlignment="Stretch" Margin="15" HorizontalAlignment="Center">
             <TextBox Text="{Binding SearchLine, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Height="25" Width="200" Grid.Row="0" VerticalAlignment="Center"/>
             <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
@@ -62,8 +63,8 @@
                     <Label Content="Search By Author"/>
                 </DockPanel>
             </StackPanel>
-            
         </DockPanel>
+        </GroupBox>
         <Button Grid.Row="2" Height="25" Width="100" Content="Next" IsEnabled="{Binding IsSelectedBook, UpdateSourceTrigger=PropertyChanged}" Command="{Binding DataContext.Nav1To2, RelativeSource={RelativeSource AncestorType={x:Type Window}}, Mode=OneWay}"/>
     </Grid>
 </UserControl>
