@@ -11,7 +11,7 @@
     </UserControl.Resources>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="29*"/>
+            <RowDefinition Height="100"/>
             <RowDefinition Height="251*"/>
             <RowDefinition Height="40*"/>
         </Grid.RowDefinitions>
@@ -50,11 +50,20 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <StackPanel Grid.Row="0" VerticalAlignment="Stretch">
-            <TextBox Text="{Binding SearchLine, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Height="25" Width="100" Grid.Row="0" VerticalAlignment="Bottom"/>
-            <RadioButton IsChecked="{Binding IsFilterByTitle, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
-            <RadioButton IsChecked="{Binding IsFilterByAuthor, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
-        </StackPanel>
+        <DockPanel Grid.Row="0" VerticalAlignment="Stretch" Margin="15" HorizontalAlignment="Center">
+            <TextBox Text="{Binding SearchLine, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Height="25" Width="200" Grid.Row="0" VerticalAlignment="Center"/>
+            <StackPanel Margin="10,0,0,0" VerticalAlignment="Center">
+                <DockPanel>
+                    <RadioButton GroupName="FilterRB" IsChecked="{Binding IsFilterByTitle, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center"/>
+                    <Label Content="Search By Title"/>
+                </DockPanel>
+                <DockPanel>
+                    <RadioButton GroupName="FilterRB" IsChecked="{Binding IsFilterByAuthor, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center"/>
+                    <Label Content="Search By Author"/>
+                </DockPanel>
+            </StackPanel>
+            
+        </DockPanel>
         <Button Grid.Row="2" Height="25" Width="100" Content="Next" IsEnabled="{Binding IsSelectedBook, UpdateSourceTrigger=PropertyChanged}" Command="{Binding DataContext.Nav1To2, RelativeSource={RelativeSource AncestorType={x:Type Window}}, Mode=OneWay}"/>
     </Grid>
 </UserControl>
